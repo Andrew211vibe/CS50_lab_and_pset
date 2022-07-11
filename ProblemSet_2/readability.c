@@ -23,15 +23,15 @@ int main(void)
     res = cl_index_calc(text);
     if (res < 1)
     {
-        printf("Before Grade 1");
+        printf("Before Grade 1\n");
     }
     else if (res > 16)
     {
-        printf("Grade 16+");
+        printf("Grade 16+\n");
     }
     else
     {
-        printf("Grade %d", res);
+        printf("Grade %d\n", res);
     }
     return 0;
 }
@@ -46,10 +46,10 @@ int cl_index_calc(char input[255])
 
     // calculate average
     // remember to convert the type so the result will not be integer
-    float avrg_l = (float)num_l / (float)num_w * 100.00;
-    float avrg_s = (float)num_s / (float)num_w * 100.00;
+    float avrg_l = (float)num_l / (float)num_w * 100.0;
+    float avrg_s = (float)num_s / (float)num_w * 100.0;
     // calculate index
-    int index;
+    float index;
     index = 0.0588 * avrg_l - 0.296 * avrg_s - 15.8;
     return (int)round(index);
 }
